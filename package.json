@@ -1,0 +1,32 @@
+{
+  "name": "crypto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.ts",
+  "scripts": {
+    "keylog": "ts-node ./src/utils/Key.ts",
+    "api": "ts-node-dev --respawn --transpile-only --poll ./src/api/app.ts",
+    "crypto": "ts-node-dev --respawn --transpile-only --poll ./src/crypto.ts",
+    "mongo": "ts-node-dev --respawn --transpile-only --poll ./src/database/app.ts",
+    "dev": "concurrently --kill-others \"yarn run mongo\" \"yarn run api\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^16.4.12",
+    "bcrypt": "^5.0.1",
+    "crypto": "^1.0.1",
+    "dotenv": "^10.0.0",
+    "elliptic": "^6.5.4",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.5",
+    "simpleflake": "^2.0.0",
+    "ts-node": "^10.1.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0"
+  }
+}
